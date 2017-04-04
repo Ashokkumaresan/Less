@@ -1,0 +1,206 @@
+@backGround:#efefef;
+@color:#fff;
+@color1:#eee;
+@color2:#ff0000;
+@fontsize:10px;
+@baseFont:Verdana,Geneva,Tahoma,Arial,Helvetica,sans-serif;
+@headerFont:Roboto,Helvetica,Arial,sans-serif;
+@normalFont:Arial Narrow;
+.genborder(){
+	border:1px solid #eee;
+	border-radius:4px;
+}
+.mix(){
+	&:hover{
+	.genborder;
+	}
+}
+body{
+	font-family:@baseFont;
+	background:@backGround;
+	color:@color;
+}
+h1{
+	font-family:@headerFont;
+	font-size:@fontsize*3;
+	text-align:center;
+}
+@media (min-width:1024px){
+	.container{
+	   .about{
+	   		width:870px;
+	   		font-family:@normalFont;
+	   }
+	}
+}
+
+.container{
+	@media(min-width:760px){
+		color:@color1;
+		font-size:@fontsize - 3;
+	@media(max-width:560px){
+		color:@color2;
+		font-size:@fontsize - 5;	
+		}
+	}
+	@media(max-width:1920px){
+	 color: ~"greeeen";
+	 font-size:@fontsize * 5;
+	}
+}
+
+.fontColor{
+	.val(@param,@param1){
+		font-family:@param;
+		color:@param1;
+	}
+}
+.myClass{
+	.fontColor > .val(@baseFont,@color1);
+}
+
+.mainClass{
+padding:10px;	
+&:extend(.myClass);	
+}
+.footer:extend(.myClass){
+	padding-bottom:20px;
+}
+
+.style1,
+.header:extend(.img){
+   background: #BF70A5;
+}
+.img{
+   font-size: 45px;
+   font-style: italic;
+}
+
+.container1,
+.style1 {
+     &:extend(.img1);
+}
+.img1{
+    font-style: italic;
+    background-color: #7B68EE;
+ }
+ .style2 {
+  h3{
+	color: #BF70A5;
+	font-size: 30px;
+}
+}
+.img2:extend(.style2 h3){
+	background:#eee;
+}
+.style3 h3,
+h3.style3{
+	color: #BF70A5;
+	font-style: italic;
+}
+.img3:extend(.style3 h3){}
+
+
+[title=tutorialspoint] {
+  font-style: italic;
+}
+[title='tutorialspoint1'] {
+ font-style: italic;
+}
+[title="tutorialspoint2"] {
+  font-style: italic;
+}
+.style4:extend([title=tutorialspoint]) {}
+.container4:extend([title='tutorialspoint1']) {}
+.img4:extend([title="tutorialspoint2"]) {}
+
+.nav{
+	width:percentage(1);
+	.genborder;
+}
+.nav{
+	&:hover{
+		width:percentage(0.5);
+	}
+}
+.style5:extend(.nav all){}
+a{
+	.genborder!important;
+	.mix;
+}
+#outer() {
+  background:yellow;
+  .inner {
+    color: red;
+  }
+}
+p {
+  #outer > .inner;
+  .mix;
+}
+
+.fillColor(@color){
+  color:darken(@color, 15%);
+}
+.fillColor(@color,@padding: 2px){
+  color:darken(@color, 15%);
+  padding: @padding;
+}
+h5{
+  .fillColor(#fff);
+}
+.listHeader{
+	.fillColor(#fd2323,4px);
+}
+@import (reference) "http://www.tutorialspoint.com/less/import_reference.less";
+p {
+    .style1;
+}
+
+.mixin1 (@a) when (lightness(@a) >= 50%) {
+   font-size: 14px;
+}
+.mixin1 (@a) when (lightness(@a) < 50%) {
+   font-size: 16px;
+}
+.mixin1 (@a) {
+   color: @a;
+}
+.class1 {
+   .mixin1(#FF0000)
+}
+.class2 {
+   .mixin1(#555)
+}
+.changeFont(@a) when (@a > 20px){
+	color:red;
+}
+.changeFont(@a) when (@a < 20px){
+	color:green;
+}
+.changeFont(@a){
+	font-size:@a;
+}
+.slider{
+	.changeFont(30px);
+}
+
+@usedScope: global;
+.mixin2() {
+  @usedScope: mixin2;
+  .cont when (@usedScope=global) {
+    background-color: red;
+    color: black;
+  }
+  .gostyle when (@usedScope=mixin2) {
+    background-color: blue;
+    color: white;
+  }  
+}
+.dash:extend(.nav all){
+.mixin2();
+}
+.list{
+  font-size:get-unit(30px);
+  padding-left:get-unit(25);
+}

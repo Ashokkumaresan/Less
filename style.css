@@ -1,0 +1,149 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, Arial, Helvetica, sans-serif;
+  background: #efefef;
+  color: #fff;
+}
+h1 {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 30px;
+  text-align: center;
+}
+@media (min-width: 1024px) {
+  .container .about {
+    width: 870px;
+    font-family: Arial Narrow;
+  }
+}
+@media (min-width: 760px) {
+  .container {
+    color: #eee;
+    font-size: 7px;
+  }
+}
+@media (min-width: 760px) and (max-width: 560px) {
+  .container {
+    color: #ff0000;
+    font-size: 5px;
+  }
+}
+@media (max-width: 1920px) {
+  .container {
+    color: greeeen;
+    font-size: 50px;
+  }
+}
+.myClass,
+.mainClass,
+.footer {
+  font-family: Verdana, Geneva, Tahoma, Arial, Helvetica, sans-serif;
+  color: #eee;
+}
+.mainClass {
+  padding: 10px;
+}
+.footer {
+  padding-bottom: 20px;
+}
+.style1,
+.header {
+  background: #BF70A5;
+}
+.img,
+.header {
+  font-size: 45px;
+  font-style: italic;
+}
+.img1,
+.container1,
+.style1,
+p {
+  font-style: italic;
+  background-color: #7B68EE;
+}
+.style2 h3,
+.img2 {
+  color: #BF70A5;
+  font-size: 30px;
+}
+.img2 {
+  background: #eee;
+}
+.style3 h3,
+h3.style3,
+.img3 {
+  color: #BF70A5;
+  font-style: italic;
+}
+[title=tutorialspoint],
+.style4 {
+  font-style: italic;
+}
+[title='tutorialspoint1'],
+.container4 {
+  font-style: italic;
+}
+[title="tutorialspoint2"],
+.img4 {
+  font-style: italic;
+}
+.nav,
+.style5,
+.dash {
+  width: 100%;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+.nav:hover,
+.style5:hover,
+.dash:hover {
+  width: 50%;
+}
+a {
+  border: 1px solid #eee !important;
+  border-radius: 4px !important;
+}
+a:hover {
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+p {
+  color: red;
+}
+p:hover {
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+h5 {
+  color: #d9d9d9;
+  padding: 2px;
+}
+.listHeader {
+  color: #d20202;
+  padding: 4px;
+}
+p {
+  background: #BF70A5;
+  color: #A0A0A0;
+  font-family: "Comic Sans MS";
+  font-size: 20px;
+}
+.class1 {
+  font-size: 14px;
+  color: #FF0000;
+}
+.class2 {
+  font-size: 16px;
+  color: #555;
+}
+.slider {
+  color: red;
+  font-size: 30px;
+}
+.dash .gostyle {
+  background-color: blue;
+  color: white;
+}
+.list {
+  font-size: px;
+  padding-left: ;
+}
